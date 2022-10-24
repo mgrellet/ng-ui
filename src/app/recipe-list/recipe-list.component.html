@@ -1,0 +1,17 @@
+<h2>Recipes</h2>
+
+<div *ngIf="selectedRecipe">
+  <br/>
+  <h2> {{selectedRecipe.name}}</h2>
+  <p> {{selectedRecipe.description}}</p>
+  <br />
+</div>
+
+<div>
+  <div *ngFor="let recipe of recipes">
+    <p  (click) = "onSelect(recipe)" style="cursor: pointer;">
+      {{recipe.name}}
+    </p>
+    <a [routerLink]="['/recipes', recipe.id ]">Edit</a>
+  </div>
+</div>
